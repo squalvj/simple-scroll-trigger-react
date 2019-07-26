@@ -5,7 +5,7 @@ const Hero = props => {
    return (
       <div className="wrapper-hero">
          <div className="container f-column flex j-center a-center">
-            {props.children}   
+            {props.children}
          </div>
       </div>
    )

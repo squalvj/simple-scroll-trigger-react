@@ -2,17 +2,30 @@
 
 .btn {
    border: none;
-   font-size: 14px;
-   letter-spacing: 3px;
+   font-size: 12px;
+   letter-spacing: 1px;
    transition: .25s all ease;
+   padding: 15px 25px;
+   border-radius: 3px;
    &.btn-common {
       background: $transparent;
       color: $color-white;
       border: 1px solid $color-white;
       &:hover {
          background: $color-white;
-         color: $transparent;
-         border: 5px solid $color-white;
+         color: $blue;
+         border: 1px solid $color-white;
+      }
+   }
+   &.btn-blue {
+      background: $blue;
+      color: $color-white;
+      border: 1px solid $blue;
+      padding: 10px;
+      &:hover {
+         background: $color-white;
+         color: $blue;
+         border: 1px solid $blue;
       }
    }
 }

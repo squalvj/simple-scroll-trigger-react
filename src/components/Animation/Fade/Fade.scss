@@ -1,0 +1,35 @@
+@import '~styles/css/color';
+
+.fade {
+   transition: all .75s ease;
+}
+.fade-enter {
+   opacity: 1;
+   font-size: inherit;
+ }
+ .fade-enter-done {
+   opacity: 1;
+   font-size: inherit;
+ }
+ .fade-exit {
+   opacity: 0;
+   * {
+      padding: 0 !important;
+      font-size: 0 !important;
+      border: none !important;
+      background: none !important;
+      color: $transparent !important;
+      opacity: 0;
+   }
+ }
+ .fade-exit-done {
+   font-size: 0;
+   * {
+      color: $transparent !important;
+      padding: 0 !important;
+      font-size: 0 !important;
+      border: none !important;
+      background: none !important;
+      opacity: 0;
+   }
+ }
