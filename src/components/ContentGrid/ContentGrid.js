@@ -6,7 +6,7 @@ const ContentGrid = props => {
       data
    } = props
    return (
-      <div className="content-grid">
+      <div className="content-grid" id="content-grid">
         {
            (data||[]).map((e, i) => (
               <div key={i} className="grid">

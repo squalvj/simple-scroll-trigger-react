@@ -5,6 +5,7 @@ import Hero from 'components/Hero'
 import Cookies from 'components/Cookies'
 import GreyWrapper from 'components/GreyWrapper'
 import ContentGrid from 'components/ContentGrid'
+import Newsletter from 'components/Newsletter'
 import Footer from 'components/Footer'
 import ButtonCommon from 'components/Button/ButtonCommon'
 import {
@@ -16,12 +17,14 @@ import {
 export default class Home extends Component {
    _isMounted = false;
    _cookies = '';
+   _overflow = {}
    
    constructor(props) {
       super(props);
       this.state = {
          height: 60,
          cookieVisible: true,
+         newsLetterVisible: false,
          data: [
             {
                title: 'Consult',
@@ -61,10 +64,12 @@ export default class Home extends Component {
       this._isMounted = true;
       const height = this._cookies.clientHeight;
       this.setState({ height });
+      this._overflow.addEventListener('scroll', this.trackScrolling);
    }
 
    componentWillUnmount() {
       this._isMounted = false;
+      this._overflow.removeEventListener('scroll', this.trackScrolling);
    }
 
    handleHideCookie = () => {
@@ -75,12 +80,28 @@ export default class Home extends Component {
       }))
    }
 
+   trackScrolling = () => {
+      const wrappedElement = document.getElementById('content-grid');
+      if (this.isBottom(wrappedElement)) {
+         this.setState({
+            newsLetterVisible: true
+         })
+         this._overflow.removeEventListener('scroll', this.trackScrolling);
+      }
+   };
+
+   isBottom(el) {
+      return el.getBoundingClientRect().bottom <= window.innerHeight;
+   }
+
    render() {
       const {
          data,
          cookieVisible,
-         height
+         height,
+         newsLetterVisible
       } = this.state
+      console.log({newsLetterVisible})
       return (
          <div className="wrapper-home" style={{
             paddingBottom: height
@@ -88,7 +109,7 @@ export default class Home extends Component {
             <div ref={ref => this._cookies = ref}>
                <Cookies visible={cookieVisible} handleClick={this.handleHideCookie}/>
             </div>
-            <div className="overflow">
+            <div className="overflow" ref={ref => this._overflow = ref}>
                <Hero>
                   <img alt="logo" className="logo" src={require('styles/img/logo.png')} />
                   <h1>
@@ -122,8 +143,9 @@ export default class Home extends Component {
                <GreyWrapper>
                   <ContentGrid data={data} />
                </GreyWrapper>
-
+            
                <Footer />
+               <Newsletter visible={newsLetterVisible} handleClick={() => this.setState({newsLetterVisible: false})}/>
             </div>
          </div>
       )

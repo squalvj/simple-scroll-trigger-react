@@ -1,0 +1,44 @@
+@import '~styles/css/color';
+
+.position-newsletter {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   z-index: 3;
+}
+
+.wrapper-newsletter {
+   max-width: 640px;
+   width: 100%;
+   background: rgba(0,123,192, 0.9);
+   padding: 20px;
+   p,h2,form {
+      color: $color-white;
+      margin: 15px 0 0 0;
+      line-height: 1.5;
+   }
+   p {
+      margin-top: 0px;
+   }
+
+   form {
+      input {
+         flex: 10;
+         margin: 0;
+         padding: 5px;
+         margin-right: 15px;
+      }
+   }
+}
+
+.close-newsletter {
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   background: $transparent;
+   border: none;
+   font-size: 14px;
+   * {
+      color: $color-white;
+   }
+}

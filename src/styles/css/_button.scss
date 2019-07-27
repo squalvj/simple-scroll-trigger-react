@@ -28,4 +28,15 @@
          border: 1px solid $blue;
       }
    }
+   &.btn-orange {
+      background: $orange;
+      color: $color-white;
+      border: 1px solid $orange;
+      padding: 10px;
+      &:hover {
+         background: $color-white;
+         color: $orange;
+         border: 1px solid $orange;
+      }
+   }
 }
