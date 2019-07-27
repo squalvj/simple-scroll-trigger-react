@@ -3,6 +3,8 @@ import {get, debounce, isEmpty} from 'lodash'
 import './Home.scss'
 import Hero from 'components/Hero'
 import Cookies from 'components/Cookies'
+import GreyWrapper from 'components/GreyWrapper'
+import ContentGrid from 'components/ContentGrid'
 import ButtonCommon from 'components/Button/ButtonCommon'
 
 export default class Home extends Component {
@@ -11,7 +13,13 @@ export default class Home extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         
+         data: [
+            {
+               title: '',
+               icon: '',
+               content: ''
+            }
+         ]
       };
    }
 
@@ -24,6 +32,9 @@ export default class Home extends Component {
    }
 
    render() {
+      const {
+         data
+      } = this.state
       return (
          <div className="wrapper-home">
             <Cookies/>
@@ -45,6 +56,20 @@ export default class Home extends Component {
                         LET'S MAKE CONTACT
                      </ButtonCommon>
                </Hero>
+
+               <GreyWrapper>
+                  <div className="wrapper-text flex a-center f-column">
+                     <h1>
+                        How can i help you ?
+                     </h1>
+                     <p className="t-center">
+                     Our work then targeted, best practices outcomes sociel innovation synergy.<br/>
+                     Venture philanthropy, revultionary inclusive policymaker relief. User-centered program areas scale.
+                     </p>
+                  </div>
+               </GreyWrapper>
+
+               <ContentGrid data={data} />
             </div>
          </div>
       )

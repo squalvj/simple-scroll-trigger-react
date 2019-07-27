@@ -1,0 +1,12 @@
+@import '~styles/css/color';
+
+.wrapper-cookies {
+   background: $smoke;
+   .container {
+      max-width: 720px;
+   }
+   .btn {
+      width: 60px;
+      margin: auto;
+   }
+}

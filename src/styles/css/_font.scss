@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,500,700|Open+Sans:400,700|Luckiest+Guy|Roboto:400,700&display=swap');
 @import 'variable';
-h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea, div {
+@import 'color';
+h2, h3, h4, h5, h6, p, a, li, button, input, textarea, div {
 	font-family: $roboto;
+	color: $dark;
+}
+
+h1 {
+	font-family: $openSans;
 }
