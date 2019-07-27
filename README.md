@@ -13,7 +13,8 @@ This project is built using create-react-app for the plain react setup with a tw
  - ✅ Infinite Scroll Pagination
  - ✅ Alias Import Abolute Path
  - ✅ .env production & development
- - ✅ Modern Grid Layout
+ - ✅ Modern Grid Layout- ✅ Responsive
+ - ✅ Newsletter will show after hit bototm of content grid
 
 # Folder Structure
 *Make the structrure even more tidy than your room*
@@ -41,6 +42,10 @@ project
 ```
 # Feature
 ![enter image description here](https://i.kym-cdn.com/photos/images/newsfeed/001/206/382/b7a.gif)
+- Newsletter will shown if you reach the bottom of Grid content height
+- Cookies will slide up after click ok
+- Responsive
+- Cross browser Platform
 
 ## Wrapper Service Call
 This is the things that i love, the wrapper built using **Axios** is has rich configuration, you can intercept before call, after call, you can validate if backend returning some special error code that need to show to the user, we can put the function in the generic interceptor in this file, and also we can dispatching (show/hide) generic loader in this file aswell if we use redux :)
