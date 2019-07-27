@@ -8,8 +8,8 @@ const ContentGrid = props => {
    return (
       <div className="content-grid">
         {
-           (data||[]).map(e => (
-              <div className="grid">
+           (data||[]).map((e, i) => (
+              <div key={i} className="grid">
                  <div className="wrapper-title">
                     <h2>
                        {e.title}
