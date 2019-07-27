@@ -6,7 +6,12 @@ import Cookies from 'components/Cookies'
 import GreyWrapper from 'components/GreyWrapper'
 import ContentGrid from 'components/ContentGrid'
 import ButtonCommon from 'components/Button/ButtonCommon'
-
+import {
+   faCoffee, 
+   faComment,
+   faPaintBrush,
+   faVolumeUp
+} from '@fortawesome/free-solid-svg-icons'
 export default class Home extends Component {
    _isMounted = false;
    
@@ -15,10 +20,35 @@ export default class Home extends Component {
       this.state = {
          data: [
             {
-               title: '',
-               icon: '',
-               content: ''
-            }
+               title: 'Consult',
+               icon: faComment,
+               content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio mi, ornare sed urna id, porttitor fringilla purus. Nam posuere sodales viverra. In hac habitasse platea dictumst. Ut sit amet turpis nec odio convallis sollicitudin. Aliquam sollicitudin augue ac convallis rutrum. Pellentesque'
+            },
+            {
+               title: 'Design',
+               icon: faPaintBrush,
+               content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio mi, ornare sed urna id, porttitor fringilla purus. Nam posuere sodales viverra. In hac habitasse platea dictumst. Ut sit amet turpis nec odio convallis sollicitudin. Aliquam sollicitudin augue ac convallis rutrum. Pellentesque'
+            },
+            {
+               title: 'Develop',
+               icon: faCoffee,
+               content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio mi, ornare sed urna id, porttitor fringilla purus. Nam posuere sodales viverra. In hac habitasse platea dictumst. Ut sit amet turpis nec odio convallis sollicitudin. Aliquam sollicitudin augue ac convallis rutrum. Pellentesque'
+            },
+            {
+               title: 'Marketing',
+               icon: faVolumeUp,
+               content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio mi, ornare sed urna id, porttitor fringilla purus. Nam posuere sodales viverra. In hac habitasse platea dictumst. Ut sit amet turpis nec odio convallis sollicitudin. Aliquam sollicitudin augue ac convallis rutrum. Pellentesque'
+            },
+            {
+               title: 'Manage',
+               icon: faComment,
+               content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio mi, ornare sed urna id, porttitor fringilla purus. Nam posuere sodales viverra. In hac habitasse platea dictumst. Ut sit amet turpis nec odio convallis sollicitudin. Aliquam sollicitudin augue ac convallis rutrum. Pellentesque'
+            },
+            {
+               title: 'Evolve',
+               icon: faCoffee,
+               content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur odio mi, ornare sed urna id, porttitor fringilla purus. Nam posuere sodales viverra. In hac habitasse platea dictumst. Ut sit amet turpis nec odio convallis sollicitudin. Aliquam sollicitudin augue ac convallis rutrum. Pellentesque'
+            },
          ]
       };
    }
@@ -69,7 +99,9 @@ export default class Home extends Component {
                   </div>
                </GreyWrapper>
 
-               <ContentGrid data={data} />
+               <GreyWrapper>
+                  <ContentGrid data={data} />
+               </GreyWrapper>
             </div>
          </div>
       )

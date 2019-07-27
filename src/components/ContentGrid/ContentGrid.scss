@@ -1,12 +1,26 @@
 @import '~styles/css/color';
 
-.wrapper-cookies {
-   background: $smoke;
-   .container {
-      max-width: 720px;
+.content-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 30px;
+}
+
+.grid {
+   display: flex;
+   flex-direction: column;
+   border: 1px solid rgba(0,0,0,0.2);
+   padding: 15px;
+   p {
+      margin: 15px 0 0 0;
    }
-   .btn {
-      width: 60px;
-      margin: auto;
+   h2 {
+      margin: 0;
+      font-weight: normal;
    }
+}
+
+.wrapper-title {
+   display: flex;
+   justify-content: space-between;
 }

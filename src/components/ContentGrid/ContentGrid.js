@@ -1,5 +1,6 @@
 import React from 'react'
 import './ContentGrid.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const ContentGrid = props => {
    const {
       data
@@ -13,7 +14,7 @@ const ContentGrid = props => {
                     <h2>
                        {e.title}
                     </h2>
-                    <img alt="grid" src={e.icon} />
+                    <FontAwesomeIcon icon={e.icon} />
                  </div>
                  <p className="wrapper-content-grid">
                     {e.content}
